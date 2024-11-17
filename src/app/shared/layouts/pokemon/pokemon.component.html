@@ -1,0 +1,8 @@
+<a routerLink="['/pokemon', pokemon.pokedex_id]">
+  <div class="card clickable">
+    <div class="flex flex-col justify-center items-center gap-3">
+      <img [src]="pokemon.sprites.regular" [alt]="pokemon.name" class="h-24" />
+      <p>{{ pokemon.name.fr }}</p>
+    </div>
+  </div>
+</a>
