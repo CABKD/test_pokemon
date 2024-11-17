@@ -1,0 +1,27 @@
+<div class="mt-8">
+  <div class="flex justify-center">
+    <a
+      class="mx-1 px-3 py-2 bg-gray-200 text-gray-500 font-medium rounded-md cursor-not-allowed"
+      (click)="previous()"
+    >
+      Précédent
+    </a>
+    <ng-container *ngFor="let page of totalPages; index as i">
+      <a
+        *ngIf="i + 1 >= currentPage - maxSize && i + 1 <= currentPage + maxSize"
+        [class]="currentPage === i + 1 ? 'page-item active' : 'page-item'"
+        class="mx-1 px-3 py-2 bg-gray-200 text-gray-700 font-medium hover:bg-cyan-700 hover:text-gray-200 rounded-md"
+        (click)="selectPageNumber(i + 1)"
+      >
+        {{ i + 1 }}
+      </a>
+    </ng-container>
+
+    <a
+      class="mx-1 px-3 py-2 bg-gray-200 text-gray-700 font-medium hover:bg-cyan-700 hover:text-gray-200 rounded-md"
+      (click)="next()"
+    >
+      Suivant
+    </a>
+  </div>
+</div>
