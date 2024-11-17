@@ -1,0 +1,37 @@
+@if (pokemon){
+<a routerLink="['/pokemon', pokemonId]">
+  <h1 class="flex items-center justify-center bg-cyan-700">
+    <a routerLink="['/']" class="btn btn-circle btn-primary mr-2"></a>
+    <div
+      class="d-flex flex-column align-items-center rounded py-2 px-4 mt-2"
+      style="background-color: rgba(49, 49, 49, 0.3)"
+    >
+      <h3 class="text-white">{{ pokemon.name.fr }}</h3>
+    </div>
+  </h1>
+  <div
+    class="flex flex-row items-center justify-center p-4 relative bg-cyan-700"
+  >
+    <img
+      [src]="pokemon.sprites.shiny"
+      [alt]="pokemon.name"
+      class="w-1/3 max-w-md"
+    />
+    <div class="block">
+      <div class="top-0 left-0 flex flex-row p-4 gap-2 text-white">
+        <span>Types : </span>
+        @for (type of pokemon.types; track type.name){
+
+        <img [src]="type.image" [alt]="type.name" class="h-6" />
+        }
+      </div>
+      <div class="top-0 left-0 flex p-4 flex-row text-white">
+        Poids : {{ pokemon.weight }}
+      </div>
+      <div class="top-0 left-0 p-4 flex flex-row text-white">
+        Taille : {{ pokemon.height }}
+      </div>
+    </div>
+  </div>
+</a>
+}
