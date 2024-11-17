@@ -26,7 +26,6 @@ export class ListPokemonsComponent implements OnInit {
   ngOnInit(): void {
     if (this.pokemonList) {
       this.pagesLength = Array(Math.ceil(this.pokemonList?.length / 10)).length;
-      console.log(typeof this.pagesLength);
     }
 
     // Obtains the page number from the http query parameter and calculates the required offset, e.g. page 3 => 100
@@ -55,7 +54,6 @@ export class ListPokemonsComponent implements OnInit {
       this.pokemonList = this.pokemonList?.filter(
         (pokemon) => pokemon?.name.fr.toLowerCase() === text.toLowerCase()
       );
-      console.log(this.pokemonList);
     }
   }
 }

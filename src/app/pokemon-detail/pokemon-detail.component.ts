@@ -31,9 +31,7 @@ export class PokemonDetailComponent implements OnInit {
       this.router.navigate([''], { queryParams: { page: 1 } });
     } else {
       this.getDetails(this.id);
-      console.log(this.id);
     }
-    console.log(this.pokemon);
   }
 
   getDetails(id: string): void {
@@ -41,7 +39,6 @@ export class PokemonDetailComponent implements OnInit {
       .getPokemonById(id)
 
       .subscribe((response) => {
-        console.log(response);
         if (response !== null) {
           this.pokemon = response;
           this.pokemonId = response.pokedex_id;
