@@ -20,12 +20,14 @@
   @for (pokemon of pokemonList | slice : (pagination.currentPage - 1) *
   pagination.pageSize : pagination.currentPage * pagination.pageSize; track
   pokemon?.pokedex_id){
-  <app-pokemon [pokemon]="pokemon"></app-pokemon>
+  
+  <a [routerLink]="['/pokemon/'+pokemon?.pokedex_id]">
+    <app-pokemon [pokemon]="pokemon"></app-pokemon>
+  </a>
   }
 </section>
 
-<!-- <app-pagination [pokemonList]="pokemonList"></app-pagination>
- --><app-pagination
+<app-pagination
   #pagination
   [pokemonList]="pokemonList"
   [pageSize]="10"
